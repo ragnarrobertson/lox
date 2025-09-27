@@ -48,6 +48,11 @@ public class lox {
     }
 
     static void error(final int line, final String where, final String message) {
-        
+        report(line, "", message);
+    }
+
+    private static void report(final int line, final String where, final String message ) {
+        System.err.println("[line " + line + "] Error" + where + ": " + message);
+        hadError = true;
     }
 }
